@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videy Clean White</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+    color: black;
+}
+
+.header {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.start-screen {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.start-btn {
+    margin-top: 20px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.loading {
+    display: none;
+    margin-top: 20px;
+    color: #666;
+}
+
+.video-container {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 80px;
+}
+
+video {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    border-radius: 15px;
+    background: black;
+}
+
+.telegram-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    display: none;
+}
+
+.telegram-btn {
+    background: #0088cc;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header"><b>videy.co</b></div>
+
+<div class="start-screen" id="startScreen">
+    <h2>Lanjutkan Menonton Video?</h2>
+    <p>Klik tombol di bawah untuk memulai.</p>
+    <button class="start-btn" onclick="startVideo()">▶ Mulai Menonton</button>
+    <div class="loading" id="loadingText">Memuat...</div>
+</div>
+
+<div class="video-container" id="videoContainer">
+    <video id="video" controls controlsList="nodownload">
+        <source src="video .mp4" type="video/mp4">
+    </video>
+</div>
+
+<div class="telegram-bar" id="telegramBar">
+    <a href="#" onclick="joinTelegram()" class="telegram-btn">Join Telegram</a>
+</div>
+
+<script>
+const ADS_LINK = "https://rungbeacon.com/pihwy18d?key=b11979058384d9a9aa9cb5871faa888d";
+const TELEGRAM_LINK = "https://t.me/+sqRMacpzi-xlODc1";
+
+let lastAdTime = 0;
+
+// 🔒 Anti spam (8 detik sekali)
+function showAds() {
+    let now = Date.now();
+    if (now - lastAdTime > 8000) {
+        lastAdTime = now;
+        window.open(ADS_LINK, "_blank");
+    }
+}
+
+// Start
+function startVideo() {
+    showAds();
+
+    document.getElementById("startScreen").style.display = "none";
+    document.getElementById("videoContainer").style.display = "block";
+    document.getElementById("telegramBar").style.display = "block";
+}
+
+// Telegram
+function joinTelegram() {
+    showAds();
+    setTimeout(() => {
+        window.open(TELEGRAM_LINK, "_blank");
+    }, 1000);
+}
+
+// ⏳ Pastikan DOM sudah siap
+window.onload = function() {
+    const video = document.getElementById("video");
+
+    // 🎯 MULTI TRIGGER
+
+    // Klik video
+    video.addEventListener("click", showAds);
+
+    // Play
+    video.addEventListener("play", showAds);
+
+    // Pause
+    video.addEventListener("pause", showAds);
+
+    // Saat mulai benar-benar jalan
+    video.addEventListener("playing", showAds);
+
+    // Klik layar mana saja
+    document.body.addEventListener("click", function(e) {
+        if (!e.target.classList.contains("telegram-btn")) {
+            showAds();
+        }
+    });
+};
+</script>
+
+<script src="https://rungbeacon.com/ac/cd/19/accd19456467f32573107aa43783b50a.js"></script>
+
+</body>
+</html>
