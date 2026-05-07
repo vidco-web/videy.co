@@ -1,0 +1,72 @@
+
+
+<html lang="id">
+<head>
+<meta charset="UTF-8"></meta>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"></meta>
+<title>Asupan Malam</title>
+
+<style>
+body {
+    margin:0;
+    font-family: Arial;
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    text-align:center;
+}
+
+.box {
+    background:white;
+    max-width:400px;
+    margin:60px auto;
+    padding:20px;
+    border-radius:10px;
+}
+
+.timer {
+    font-size:30px;
+    color:red;
+}
+
+.btn {
+    display:inline-block;
+    padding:12px 20px;
+    background:green;
+    color:white;
+    text-decoration:none;
+    border-radius:5px;
+    margin-top:15px;
+}
+</style>
+
+<script>
+let waktu = 5;
+
+function jalan(){
+    document.getElementById("timer").innerHTML = waktu;
+
+    if(waktu <= 0){
+        window.location.href = "https://www.profitablecpmratenetwork.com/jc4bzkf1?key=51e86312c82641cb4638ec283e05655d"; //
+    } else {
+        waktu--;
+        setTimeout(jalan,1000);
+    }
+}
+
+window.onload = jalan;
+</script>
+
+</head>
+
+<body>
+
+<div class="box">
+<h2>💰 Cara Dapat Penghasilan Online</h2>
+<p>Anda akan diarahkan dalam:</p>
+
+<div class="timer" id="timer">5</div>
+
+<a class="btn" href="https://www.profitablecpmratenetwork.com/jc4bzkf1?key=51e86312c82641cb4638ec283e05655d">Lanjutkan</a>
+</div>
+
+</body>
+</html>
